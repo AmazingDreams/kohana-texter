@@ -36,9 +36,9 @@ class Kohana_Texter {
 
 		$select = $select->execute();
 
-		if($select->count() == 0 AND $lang != 'en-US')
+		if($select->count() == 0 AND $lang != I18n::lang())
 		{
-			return self::get($key, 'en-US');
+			return self::get($key, I18n::lang());
 		}
 
 		if($select->count() > 1)
